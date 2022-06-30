@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -26,14 +28,16 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText edtEmail,edtPass;
     private AppCompatButton btnLoginIntent,btnRegister;
     private TextView txtforgotPass,txtCreateAccount;
-    private String email,password;
+    private String email,password,User;
     private ProgressDialog pd;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        databaseReference = FirebaseDatabase.getInstance().getReference();
         pd = new ProgressDialog(this);
         edtEmail = findViewById(R.id.edtEmailRegister);
         edtPass = findViewById(R.id.edtPasswordRegister);
@@ -67,7 +71,9 @@ public class RegisterActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
-                        SendToLoginActivity();
+                        User = mAuth.getCurrentUser().getUid();
+                        databaseReference.child("Users").child(User).setValue("");
+                        sendToMainActivity();
                         pd.dismiss();
                     }
                     else{

@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private FirebaseUser currentUser;
+
     private FirebaseAuth mAuth;
     private EditText edtEmail,edtPass;
     private AppCompatButton btnLogin,btnRegisterIntent;
@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        currentUser = mAuth.getCurrentUser();
+
         mAuth = FirebaseAuth.getInstance();
         pd = new ProgressDialog(this);
         edtEmail = findViewById(R.id.edtEmailLogin);
@@ -106,15 +106,6 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        if(currentUser != null){
-            sendToMainActivity();
-        }
-
-    }
 
     private void sendToMainActivity() {
         Intent i = new Intent(LoginActivity.this,MainActivity.class);
