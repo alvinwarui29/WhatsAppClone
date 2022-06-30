@@ -4,7 +4,7 @@
     android:id="@+id/mainAppBar"
     android:layout_height="wrap_content"
     android:background="@color/green"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+
     >
 
 </androidx.appcompat.widget.Toolbar>
