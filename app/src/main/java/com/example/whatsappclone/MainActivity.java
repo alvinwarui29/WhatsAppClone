@@ -120,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         else if (item.getItemId() == R.id.FindFriendsMenu){
+            SendToFindFriends();
 
         }
         else if (item.getItemId() == R.id.CreateGroupMenu){
@@ -127,6 +128,14 @@ public class MainActivity extends AppCompatActivity {
 
         }
         return true;
+
+    }
+
+    private void SendToFindFriends() {
+        Intent i = new Intent(MainActivity.this,FindFriendsActivity.class);
+        startActivity(i);
+
+
 
     }
 
