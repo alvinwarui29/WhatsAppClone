@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private EditText edtEmail,edtPass;
-    private AppCompatButton btnLogin,btnRegisterIntent;
+    private AppCompatButton btnLogin,btnRegisterIntent,btnLoginPhone;
     private TextView txtforgotPass,txtCreateAccount;
     private String email,password;
     private ProgressDialog pd;
@@ -35,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        btnLoginPhone = findViewById(R.id.btnLoginPhoneLogin);
 
         mAuth = FirebaseAuth.getInstance();
         pd = new ProgressDialog(this);
@@ -58,11 +59,19 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+        btnLoginPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SendToPhoneLoginActivity();
+            }
+        });
 
 
 
 
     }
+
+
 
     private void SignInUser() {
 
@@ -111,5 +120,11 @@ public class LoginActivity extends AppCompatActivity {
         Intent i = new Intent(LoginActivity.this,MainActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
+    }
+
+    private void SendToPhoneLoginActivity() {
+        Intent i = new Intent(LoginActivity.this,PhoneLoginActivity.class);
+        startActivity(i);
+
     }
 }

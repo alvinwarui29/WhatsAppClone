@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PhoneLoginActivity">
+
+    <EditText
+        android:id="@+id/edtPhoneNumberPhoneLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:hint="Phone Number eg +254712345"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:drawableStart="@drawable/phone"/>
+
+    <EditText
+        android:id="@+id/edtVerificationCodePhoneLogin"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/edtPhoneNumberPhoneLogin"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_marginTop="20dp"
+        android:hint="Enter your verification Code"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:drawableStart="@drawable/phone"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSendCodePhoneLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Verification code"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
+        android:layout_below="@+id/edtVerificationCodePhoneLogin"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnVerifyPhoneLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verify"
+        android:visibility="invisible"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
+        android:layout_below="@+id/btnSendCodePhoneLogin"/>
+
+
+
+
+
+</RelativeLayout>
