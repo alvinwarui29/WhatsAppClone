@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/profile_activity"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profilePicProfileActivity"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="150dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_baseline_person_24"/>
+
+    <TextView
+        android:id="@+id/txtUserNameProfileActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="UserName"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:layout_below="@+id/profilePicProfileActivity"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/txtUserStatusProfileActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtUserNameProfileActivity"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:text="Hey there i am using Whatsapp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSendMessageProfileActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtUserStatusProfileActivity"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
+        android:text="Send Message"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDeclineMessageProfileActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSendMessageProfileActivity"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
+        android:text="Decline Request"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:visibility="invisible"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
+
+
+
+
+</RelativeLayout>
